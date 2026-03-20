@@ -1,19 +1,12 @@
 //src/routes/auth.routes.ts
 import express from "express"
 import { authMiddleware } from "../middleware/auth.middleware"
+import { getMe, publicRoute } from "../controllers/auth.controller"
 
 const router = express.Router()
 
-// 🔓 public
-router.get("/public", (req, res) => {
-  res.json({ message: "Public route" })
-})
+router.get("/public", publicRoute)
 
-// 🔐 protected
-router.get("/me", authMiddleware, (req, res) => {
-  res.json({
-    user: (req as any).user,
-  })
-})
+router.get("/me", authMiddleware, getMe)
 
 export default router
