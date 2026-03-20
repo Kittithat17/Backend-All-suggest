@@ -1,3 +1,4 @@
+//src/services/product.service.ts
 import { supabase } from "../config/supabase"
 
 export const getProducts = async (category?: string) => {

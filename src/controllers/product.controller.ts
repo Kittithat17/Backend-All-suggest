@@ -1,5 +1,7 @@
+//src/controllers/product.controller.ts
 import { Request, Response } from "express"
 import { getProducts, getCategories } from "../services/product.service"
+
 
 export const getAllProducts = async (req: Request, res: Response) => {
   try {
